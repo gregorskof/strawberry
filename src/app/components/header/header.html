@@ -1,5 +1,5 @@
 <header>
-    <h1><a href="/home">Strawberry</a> &#x25BA; {{ isHome() ? "Home" : "Shop" }}</h1>
+    <h1><a href="/strawberry/home">Strawberry</a> &#x25BA; {{ isHome() ? "Home" : "Shop" }}</h1>
     <nav>
         @for (link of navLinks; track link.path) {
             <!-- Buttons with no path get skipped -->
