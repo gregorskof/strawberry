@@ -1,0 +1,225 @@
+.greeting {
+    display: flex;
+    min-height: 50vh;
+    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/057/068/323/small/single-fresh-red-strawberry-on-table-green-background-food-fruit-sweet-macro-juicy-plant-image-photo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.greeting h1 {
+    margin: auto;
+    font-size: clamp(2rem, 6vw, 4rem);
+    color: white;
+    text-shadow: black 0 0 5px;
+    text-align: center;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    min-height: 50vh;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    font-size: larger;
+    color: white;
+    background-color: #333333;
+}
+
+.about h1 {
+    margin-top: auto;
+}
+
+.about p {
+    margin-bottom: auto;
+}
+
+.formSection {
+    padding: 50px 20px;
+    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/068/965/371/small_2x/close-up-of-a-ripe-red-strawberry-with-a-vibrant-green-background-showing-its-details-free-photo.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: bottom;
+    box-sizing: border-box;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: min(600px, 100%);
+    margin: 40px auto;
+    padding: 40px;
+    box-sizing: border-box;
+
+    border-radius: 25px;
+    border: 1px solid #ffffff40;
+
+    background-color: #ffffff26;
+    box-shadow: 0 8px 32px 0 #00000026;
+    backdrop-filter: blur(12px);
+
+    color: white;
+    font-size: larger;
+}
+
+form input,
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ffffff40;
+
+    background-color: #ffffff26;
+    box-shadow: 0 8px 32px 0 #00000026;
+
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+form input:focus,
+textarea:focus {
+    outline: 2px solid #ffffff80;
+}
+
+form input::placeholder,
+textarea::placeholder {
+    color: white;
+}
+
+#submitBtn {
+    width: 25%;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: all 0.2s ease;
+}
+
+#submitBtn:hover {
+    text-shadow: white 0 0 5px;
+    scale: 1.05;
+}
+
+#submitBtn:active {
+    text-shadow: white 0 0 3px;
+    scale: 0.95;
+}
+
+
+/* Tablet */
+@media (max-width: 768px) {
+    .greeting {
+        min-height: 45vh;
+        background-attachment: scroll;
+    }
+
+    .about {
+        min-height: auto;
+        padding: 60px 25px;
+    }
+
+    .formSection {
+        padding: 40px 20px;
+        background-attachment: scroll;
+    }
+
+    form {
+        padding: 30px;
+        margin: 20px auto;
+    }
+
+    #submitBtn {
+        width: 35%;
+    }
+}
+
+
+/* Phone */
+@media (max-width: 600px) {
+    .greeting {
+        min-height: 55vh;
+        padding: 15px;
+    }
+
+    .greeting h1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+
+    .about {
+        padding: 50px 20px;
+        font-size: 1rem;
+    }
+
+    .about h1 {
+        font-size: 1.8rem;
+    }
+
+    .about p {
+        line-height: 1.7;
+    }
+
+    .formSection {
+        padding: 30px 15px;
+    }
+
+    form {
+        width: 100%;
+        padding: 25px 20px;
+        margin: 10px auto;
+        border-radius: 18px;
+        font-size: 1rem;
+    }
+
+    form input,
+    textarea {
+        font-size: 16px;
+    }
+
+    textarea {
+        min-height: 130px;
+    }
+
+    #submitBtn {
+        width: 100%;
+        padding: 12px;
+    }
+
+    #submitBtn:hover {
+        scale: 1;
+    }
+
+    #submitBtn:active {
+        scale: 0.98;
+    }
+}
+
+
+/* Very small phones */
+@media (max-width: 380px) {
+    .greeting h1 {
+        font-size: 1.9rem;
+    }
+
+    .about h1 {
+        font-size: 1.6rem;
+    }
+
+    form {
+        padding: 20px 15px;
+    }
+}
