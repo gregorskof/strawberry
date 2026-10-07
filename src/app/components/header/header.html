@@ -1,0 +1,20 @@
+<header>
+    <h1><a href="home">Strawberry</a> &#x25BA; {{ isHome() ? "Home" : "Shop" }}</h1>
+    <nav>
+        @for (link of navLinks; track link.path) {
+            <!-- Buttons with no path get skipped -->
+            @if (link.path) {
+                <button [routerLink]="link.path" [fragment]="link.fragment"  routerLinkActive="active">{{ link.label }}</button>
+            }
+        }
+        @empty {
+            <p>Loading buttons...</p>
+        }
+        <button class="cart-link" routerLink="/cart" routerLinkActive="active" aria-label="Open cart">
+            Cart
+            @if (cart.totalCount() > 0) {
+                <span class="cart-badge">{{ cart.totalCount() }}</span>
+            }
+        </button>
+    </nav>
+</header>

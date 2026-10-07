@@ -1,0 +1,35 @@
+<section class="cards-grid">
+  @for (product of products; track product.id) {
+    <article class="product-card" [attr.data-category]="product.category">
+      <div class="product-image">
+        <div class="placeholder-img">🍓</div>
+        @if (product.image) {
+          <img class="product-img" [src]="product.image" [alt]="product.title" (error)="onImageError($event)"/>
+        }
+        <span class="category-badge">{{ product.category }}</span>
+      </div>
+      
+      <div class="product-info">
+        <h2 class="product-title">{{ product.title }}</h2>
+        <p class="product-weight">Weight: {{ product.weight }}</p>
+        
+        <div class="product-footer">
+          <span class="product-price">{{ product.price | currency:'EUR':'symbol':'1.2-2' }}</span>
+          <button class="btn-add" (click)="addToCart(product)">Add to cart</button>
+        </div>
+
+        @if (isInCart(product.id)) {
+          <p class="added-note">✓ Added to your cart</p>
+        }
+        @else if (blockedProductIds.has(product.id)) {
+          <p class="added-note-error">This product can't be added to your cart</p>
+        }
+      </div>
+    </article>
+  }
+  @empty {
+    <div class="empty-state">
+      <p>There are no available products at the moment.</p>
+    </div>
+  }
+</section>
